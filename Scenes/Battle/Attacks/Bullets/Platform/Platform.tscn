@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Battle/Attacks/Bullets/Platform/Platform.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Battle/Bullets/Platform.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 24.5, 3.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+resource_local_to_scene = true
+extents = Vector2( 24.5, 3.5 )
+
+[node name="Platform" type="NinePatchRect" groups=["Bullet", "Platform"]]
+margin_right = 49.0
+margin_bottom = 7.0
+texture = ExtResource( 2 )
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color" type="NinePatchRect" parent="."]
+modulate = Color( 0, 0.501961, 0, 1 )
+margin_top = -4.0
+margin_right = 49.0
+margin_bottom = 3.0
+texture = ExtResource( 2 )
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionFollow" type="KinematicBody2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CollisionFollow"]
+position = Vector2( 24.5, 3.5 )
+shape = SubResource( 1 )
+disabled = true
+one_way_collision = true
+
+[node name="CollisionSlide" type="StaticBody2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="CollisionSlide"]
+position = Vector2( 24.5, 3.5 )
+shape = SubResource( 2 )
+disabled = true
+one_way_collision = true

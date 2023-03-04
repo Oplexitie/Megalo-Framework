@@ -1,0 +1,24 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/Battle/HUD/Target/Strike/Strike.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Battle/Hud/Target/Strike/3.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Battle/Hud/Target/Strike/5.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Battle/Hud/Target/Strike/4.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Battle/Hud/Target/Strike/2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Battle/Hud/Target/Strike/1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Battle/Hud/Target/Strike/0.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "default",
+"speed": 30.0
+} ]
+
+[node name="Strike" type="AnimatedSprite"]
+frames = SubResource( 1 )
+centered = false
+script = ExtResource( 1 )
+
+[connection signal="animation_finished" from="." to="." method="_on_Strike_animation_finished"]

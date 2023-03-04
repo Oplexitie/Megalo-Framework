@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/Hachicro Pro (Default).tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Battle/Enemy/DamageWriter/DamageWriter.gd" type="Script" id=2]
+
+[node name="DamageWriter" type="Node2D" groups=["DamageWriter"]]
+script = ExtResource( 2 )
+
+[node name="Health" type="ColorRect" parent="."]
+margin_top = 8.0
+margin_right = 120.0
+margin_bottom = 21.0
+color = Color( 0, 1, 0, 1 )
+
+[node name="Outline" type="ColorRect" parent="Health"]
+show_behind_parent = true
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 121.0
+margin_bottom = 14.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="Health"]
+show_behind_parent = true
+margin_right = 120.0
+margin_bottom = 13.0
+color = Color( 0.3, 0.3, 0.3, 1 )
+
+[node name="Text" type="RichTextLabel" parent="."]
+margin_left = -30.0
+margin_top = -38.0
+margin_right = 151.0
+margin_bottom = 5.0
+rect_clip_content = false
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]99999"
+text = "99999"
+scroll_active = false
+
+[node name="Tween" type="Tween" parent="."]

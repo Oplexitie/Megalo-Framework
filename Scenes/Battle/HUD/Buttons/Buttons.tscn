@@ -1,0 +1,79 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scripts/Battle/HUD/Buttons/BtnFuncs.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Battle/Hud/Buttons/item0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Battle/Hud/Buttons/act1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Battle/Hud/Buttons/fight1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Battle/Hud/Buttons/mercy1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Battle/Hud/Buttons/fight0.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Battle/Hud/Buttons/act0.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Battle/Hud/Buttons/mercy0.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Battle/Hud/Buttons/item1.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "default",
+"speed": 0.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "default",
+"speed": 0.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "default",
+"speed": 0.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "default",
+"speed": 0.0
+} ]
+
+[node name="Buttons" type="Node2D"]
+
+[node name="Fight" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+centered = false
+script = ExtResource( 1 )
+function = "menuFight"
+
+[node name="Act" type="AnimatedSprite" parent="."]
+position = Vector2( 153, 0 )
+frames = SubResource( 2 )
+centered = false
+script = ExtResource( 1 )
+id = 1
+function = "menuAct"
+
+[node name="Item" type="AnimatedSprite" parent="."]
+position = Vector2( 313, 0 )
+frames = SubResource( 3 )
+centered = false
+script = ExtResource( 1 )
+id = 2
+function = "menuItem"
+
+[node name="Mercy" type="AnimatedSprite" parent="."]
+position = Vector2( 468, 0 )
+frames = SubResource( 4 )
+centered = false
+script = ExtResource( 1 )
+id = 3
+function = "menuMercy"

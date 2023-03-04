@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Battle/Attacks/Bullets/BoneStab/BoneStab.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Battle/Bullets/BoneV.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Battle/Bullets/Warning.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 6, 12 )
+
+[node name="BoneStab" type="NinePatchRect" groups=["BoneStab", "Bullet"]]
+margin_right = 12.0
+margin_bottom = 24.0
+texture = ExtResource( 2 )
+patch_margin_top = 6
+patch_margin_bottom = 6
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Warning" type="NinePatchRect" parent="."]
+margin_right = 24.0
+margin_bottom = 24.0
+texture = ExtResource( 3 )
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="HitBox"]
+position = Vector2( 6, 12 )
+shape = SubResource( 1 )

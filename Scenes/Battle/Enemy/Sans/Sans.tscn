@@ -1,0 +1,152 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://Scripts/Battle/Enemy/Sans/Sans.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Legs/Sitting.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Legs/Standing.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Head/ClosedEyes.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Head/Tired2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Head/Wink.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandDown/0.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Head/Default.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandUp/5.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandUp/2.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandUp/0.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandUp/1.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Head/LookLeft.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Head/NoEyes.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Torso/Default.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Head/Tired.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Torso/Shrug.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandUp/4.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandUp/3.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Head/BlueEye/1.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandDown/4.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandDown/1.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandRight/3.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandRight/2.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandRight/5.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandRight/1.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Head/BlueEye/0.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandRight/4.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandRight/0.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandDown/2.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Battle/Enemy/Sans/Body/HandDown/3.png" type="Texture" id=31]
+
+[sub_resource type="SpriteFrames" id=1]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "Sitting",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "Standing",
+"speed": 0.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 15 ) ],
+"loop": false,
+"name": "Default",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": false,
+"name": "Shrug",
+"speed": 0.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 22 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "HandDown",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 28 ), ExtResource( 25 ) ],
+"loop": false,
+"name": "HandRight",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 19 ), ExtResource( 18 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "HandUp",
+"speed": 30.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 27 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "BlueEye",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "ClosedEyes",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "Default",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": false,
+"name": "LookLeft",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": false,
+"name": "NoEyes",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": false,
+"name": "Tired",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "Tired2",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "Wink",
+"speed": 0.0
+} ]
+
+[node name="Sans" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Legs" type="AnimatedSprite" parent="."]
+position = Vector2( 2, 90 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "Standing"
+
+[node name="Torso" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 42 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 3 )
+animation = "Default"
+
+[node name="Body" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 0, 40 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 4 )
+animation = "HandRight"
+centered = false
+offset = Vector2( -30, -34 )
+
+[node name="Head" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 2 )
+animation = "Default"

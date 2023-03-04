@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/Mars Needs Cunnilingus (Default).tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Battle/HUD/HealthBar/HealthBar.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Battle/Hud/HealthBar/KRIcon.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Battle/Hud/HealthBar/HPIcon.png" type="Texture" id=4]
+
+[node name="HealthBar" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="HPIcon" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 4, 5 )
+
+[node name="KRIcon" type="Sprite" parent="."]
+position = Vector2( 152, 0 )
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 4, 5 )
+
+[node name="Health" type="ColorRect" parent="."]
+margin_left = 36.0
+margin_right = 147.0
+margin_bottom = 21.0
+color = Color( 1, 1, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_left = 36.0
+margin_right = 147.0
+margin_bottom = 21.0
+color = Color( 0.745098, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Karma" type="ColorRect" parent="."]
+margin_left = 36.0
+margin_right = 36.0
+margin_bottom = 21.0
+color = Color( 1, 0, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="."]
+margin_left = 197.0
+margin_right = 389.0
+margin_bottom = 21.0
+rect_clip_content = false
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "92 / 92"
+text = "92 / 92"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
