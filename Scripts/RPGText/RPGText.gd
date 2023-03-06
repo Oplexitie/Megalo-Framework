@@ -16,7 +16,7 @@ var setPause: = {}
 var interactable: = true
 var destroyTime: = 0.0
 
-var textSound: = ""
+var textSound
 
 signal con
 
@@ -68,4 +68,4 @@ func blitNormal(): # Default blitting type
 	if (charCount < len(text) - 1):
 		match text[charCount]:
 			" ", "?", ".", "!", ",": return
-			_: audio.play(textSound)
+			_: audio.play(1,textSound)

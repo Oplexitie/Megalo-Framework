@@ -69,7 +69,7 @@ func _ready():
 	text_color[1] = "[color=#646464]"
 	text_color[2] = "[color=#646464]"
 	update_text()
-	audio.volumeDB = (opt_config[2] - 80) /2
+	AudioServer.set_bus_volume_db(0,opt_config[2]/2.5-40)
 
 func _physics_process(delta):
 	#loading done checks if action is completed, if it is, it won't do the same thing over and over
@@ -132,7 +132,7 @@ func _physics_process(delta):
 					if(left_held==true or right_held==true):
 						if(opt_config[opt_select]>0 and opt_config[opt_select]<100):
 							opt_config[2] += int(right_held) - int(left_held)
-							audio.volumeDB = (opt_config[2] - 80) /2
+							AudioServer.set_bus_volume_db(0,opt_config[2]/2.5-40)
 							cooldown = 7
 							
 						if(opt_config[2]>=100):
@@ -140,7 +140,7 @@ func _physics_process(delta):
 							opt_config[2]=100
 						elif(opt_config[2]<=0):
 							opt_config[2]=0
-							audio.volumeDB = -80
+							AudioServer.set_bus_volume_db(0,-80)
 						elif(opt_config[2]<10):
 							aftertext="%       >"
 						else:

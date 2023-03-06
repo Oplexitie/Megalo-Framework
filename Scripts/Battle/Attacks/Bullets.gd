@@ -54,7 +54,7 @@ func createBoneStab(ZIndex, Direction, Size, WaitTime, StayTime, BulletMode: = 0
 	i.waitTime = WaitTime
 	i.stayTime = StayTime
 	
-	if WaitTime > 4.0: audio.play("Sounds/Warning")
+	if WaitTime > 4.0: audio.play(2, preload("res://Audio/Sounds/Warning.wav"))
 	
 	i.patch_margin_left = 0
 	i.patch_margin_right = 0
@@ -133,7 +133,7 @@ func createGasterBlaster(ZIndex, Scale, Position, IdealPos, IdealRot, Pause, Ter
 	
 	s.scale = Scale
 	
-	audio.play("Sounds/Bullets/GasterBlaster", 1.2)
+	audio.play(5, preload("res://Audio/Sounds/Bullets/GasterBlaster.wav"), 1.2)
 	
 	mask.add_child(i)
 	if ZIndex == 0: i.show_behind_parent = true

@@ -16,7 +16,7 @@ var spareOptions = [["Spare", "menuSpare"]]
 onready var defaultFontSettings: = {
 	"Font" : preload("res://Fonts/Determination Mono (Menu).tres"),
 	"Color" : Color(1, 1, 1),
-	"Sound" : "Sounds/Voice/Typer",
+	"Sound" : preload("res://Audio/Sounds/Voice/Typer.wav"),
 }
 onready var richTextEffects: Array = [
 	preload("res://Scripts/RPGText/RichTextEffects/Tremble/Tremble.tres"),
@@ -42,7 +42,7 @@ func _input(event: InputEvent) -> void:
 			if n.action != "" and event.is_action_pressed("ui_accept"):
 				if menuNo == 0: menuNo = 1
 				call(n.action)
-				audio.play("Sounds/MenuConfirm")
+				audio.play(2, preload("res://Audio/Sounds/MenuConfirm.wav"))
 			
 			elif n.backAction != "" and event.is_action_pressed("ui_cancel"):
 				menuCoord[1] = 0
@@ -56,7 +56,7 @@ func _input(event: InputEvent) -> void:
 	if menuNo >= 0:
 		menuCoord[menuNo] = posmod(menuCoord[menuNo] + menuInput.x * inputLimit.x, menuSize)
 		menuCoord[menuNo] = posmod(menuCoord[menuNo] + menuInput.y * inputLimit.y, menuSize)
-		if menuNo == 0 and menuInput.x: audio.play("Sounds/MenuMove")
+		if menuNo == 0 and menuInput.x: audio.play(2, preload("res://Audio/Sounds/MenuMove.wav"))
 
 
 func _process(_delta: float) -> void:
@@ -262,7 +262,7 @@ func menuItem():
 
 
 func menuUseItem():
-	audio.play("Sounds/Player/Heal")
+	audio.play(3, preload("res://Audio/Sounds/Player/Heal.wav"))
 	menuClear(true)
 	
 	var HealText: = ""

@@ -2,7 +2,7 @@ extends Node2D
 
 
 onready var speechBubble: Dictionary = {
-	"Sans" : [preload("res://Scenes/Battle/Enemy/Dialogue/SpeechBubbles/SansBubble.tscn"), "Sounds/Voice/Sans"]
+	"Sans" : [preload("res://Scenes/Battle/Enemy/Dialogue/SpeechBubbles/SansBubble.tscn"), preload("res://Audio/Sounds/Voice/Sans.wav")]
 }
 
 

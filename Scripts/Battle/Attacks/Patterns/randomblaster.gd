@@ -28,9 +28,9 @@ func _ready() -> void:
 		if end.y > 440: end.y = 440
 		var angle = rad2deg(playerHeart.position.angle_to_point(end))
 		bullets.createGasterBlaster(1, Vector2(2, 2), xy1, end, angle, 14, 1)
-		$"../../Attacks/Timer".start(0.83333)
+		$"../../Attacks/Timer".start(0.53333)
 		yield($"../../Attacks/Timer", "timeout")
 		
-	$"../../Attacks/Timer".start(2)
+	$"../../Attacks/Timer".start(1)
 	yield($"../../Attacks/Timer", "timeout")
 	emit_signal("endAttack")

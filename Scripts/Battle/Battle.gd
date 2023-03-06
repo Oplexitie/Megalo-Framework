@@ -46,12 +46,12 @@ func _ready() -> void:
 	#$Attacks.runAttack()
 	#audio.play("Music/AmbientBirds", 1.0, 1.0, true)
 	
-	audio.play("Music/Megalovania", 1.0, 1.0, true)
+	audio.play(0, load("res://Audio/Music/mus_zz_megalovania.ogg"),true)
 
 # warning-ignore:unused_parameter
 func _process(delta: float) -> void:
 	if (global.hp) <= 0:
-		audio.stop("Music/Megalovania")
+		audio.stopall()
 		global.deathHeartPos = $HeartLayer/PlayerHeart.position
 		global.deathHeratCol = $HeartLayer/PlayerHeart/Sprite.modulate
 		

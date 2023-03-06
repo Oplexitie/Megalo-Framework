@@ -2,8 +2,8 @@ extends Viewport
 
 onready var borders = [$"../../../../Border/Hallborder", $"../../../../Border/Hallborder2"]
 onready var scenes = [
-	preload("res://Scenes/Battle/Battle.tscn"),
-	preload("res://Scenes/GameOver/GameOver.tscn"),
+	load("res://Scenes/Battle/Battle.tscn"),
+	load("res://Scenes/GameOver/GameOver.tscn"),
 	load("res://Scenes/Menu/menu.tscn")
 	]
 onready var anim = $"../../../../Border/AnimationPlayer"

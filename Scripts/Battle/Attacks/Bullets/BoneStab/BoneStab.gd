@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 	if waitTime > 0: waitTime -= 1 * (delta * 30)
 	else:
 		if $Warning.visible:
-			$Warning.hide(); audio.play("Sounds/Bullets/SpearRise")
+			$Warning.hide(); audio.play(4, preload("res://Audio/Sounds/Bullets/SpearRise.wav"))
 		match con:
 			0:
 				rect_position -= Vector2(cos(deg2rad(direction * 90)), sin(deg2rad(direction * 90))) * floor(size / 3.0) * (delta * 30)

@@ -29,7 +29,7 @@ config/windows_native_icon="res://icon.ico"
 [autoload]
 
 global="*res://Scenes/Autoload/Global.tscn"
-audio="*res://Scenes/Autoload/Audio.tscn"
+audio="*res://Scripts/Autoload/Audio.gd"
 
 [debug]
 
