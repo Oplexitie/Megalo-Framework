@@ -12,18 +12,18 @@ func _ready():
 	
 	$Timer.start(0.5)
 	yield($Timer, "timeout")
-	audio.play(3, preload("res://Audio/Sounds/Player/Break.wav"))
+	audio.playsfx(3, preload("res://Audio/Sounds/Player/Break.wav"))
 	$Player/breakheart.frame = 1
 	
 	$Timer.start(1)
 	yield($Timer, "timeout")
-	audio.play(3, preload("res://Audio/Sounds/Player/Break2.wav"))
+	audio.playsfx(3, preload("res://Audio/Sounds/Player/Break2.wav"))
 	$Player/Particles2D.emitting = true
 	$Player/breakheart.queue_free()
 	
 	$Timer.start(1.5)
 	yield($Timer, "timeout")
-	audio.play(0, load("res://Audio/Music/mus_gameover.ogg"),true)
+	audio.playmusic(load("res://Audio/Music/mus_gameover.ogg"))
 	
 	$Tween.interpolate_property($BlackVoid/ColorRect, "color:a", 1, 0, 1.5)
 	$Tween.start()
@@ -41,7 +41,8 @@ func _input(event):
 			
 			$Timer.start(1.7)
 			yield($Timer, "timeout")
-			audio.stop(0)
 			
+			audio.bus_muting(3,false)
+			audio.stop(0)
 			gameviewport.changeborder(8,1)
 			gameviewport.loadScene(0)

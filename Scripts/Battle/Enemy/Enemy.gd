@@ -77,7 +77,7 @@ func _process(delta: float) -> void:
 					step_hit = 1
 				1:
 					if (audio_play == false):
-						audio.play(6, preload("res://Audio/Sounds/Hit.wav"))
+						audio.playsfx(6, preload("res://Audio/Sounds/Hit.wav"))
 						audio_play = true
 						
 					if floor(dualtimer) == 0:

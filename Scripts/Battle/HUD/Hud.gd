@@ -42,7 +42,7 @@ func _input(event: InputEvent) -> void:
 			if n.action != "" and event.is_action_pressed("ui_accept"):
 				if menuNo == 0: menuNo = 1
 				call(n.action)
-				audio.play(2, preload("res://Audio/Sounds/MenuConfirm.wav"))
+				audio.playsfx(2, preload("res://Audio/Sounds/MenuConfirm.wav"))
 			
 			elif n.backAction != "" and event.is_action_pressed("ui_cancel"):
 				menuCoord[1] = 0
@@ -56,7 +56,7 @@ func _input(event: InputEvent) -> void:
 	if menuNo >= 0:
 		menuCoord[menuNo] = posmod(menuCoord[menuNo] + menuInput.x * inputLimit.x, menuSize)
 		menuCoord[menuNo] = posmod(menuCoord[menuNo] + menuInput.y * inputLimit.y, menuSize)
-		if menuNo == 0 and menuInput.x: audio.play(2, preload("res://Audio/Sounds/MenuMove.wav"))
+		if menuNo == 0 and menuInput.x: audio.playsfx(2, preload("res://Audio/Sounds/MenuMove.wav"))
 
 
 func _process(_delta: float) -> void:

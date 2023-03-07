@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/gameview.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Border/hallborder.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade1"
@@ -112,14 +111,12 @@ tracks/3/keys = {
 [node name="Hallborder" type="Sprite" parent="Border"]
 position = Vector2( 960, 540 )
 z_index = 1
-texture = ExtResource( 2 )
 hframes = 2
 vframes = 6
 frame = 8
 
 [node name="Hallborder2" type="Sprite" parent="Border"]
 position = Vector2( 960, 540 )
-texture = ExtResource( 2 )
 hframes = 2
 vframes = 6
 frame = 10

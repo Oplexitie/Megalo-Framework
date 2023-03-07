@@ -12,7 +12,7 @@ func _ready() -> void:
 	sans().bounce = 0
 	sans().armIndex = 0
 	sans().moveArm = 3
-	audio.play(5, preload("res://Audio/Sounds/Bullets/GasterBlaster.wav"), 1.4)
+	audio.playsfx(5, preload("res://Audio/Sounds/Bullets/GasterBlaster.wav"), 1.4)
 	
 	$"../../Attacks/Timer".start(0.26666)
 	yield($"../../Attacks/Timer", "timeout")
@@ -29,13 +29,13 @@ func _ready() -> void:
 	$"../../Attacks/Timer".start(0.5)
 	yield($"../../Attacks/Timer", "timeout")
 	playerHeart.changeMode(1)
-	audio.play(6, preload("res://Audio/Sounds/Bell.wav"))
+	audio.playsfx(6, preload("res://Audio/Sounds/Bell.wav"))
 
 	$"../../Attacks/Timer".start(0.4)
 	yield($"../../Attacks/Timer", "timeout")
 	sans().armIndex = 0
 	sans().moveArm = 1
-	audio.play(5, preload("res://Audio/Sounds/Bullets/GasterBlaster.wav"), 1.4)
+	audio.playsfx(5, preload("res://Audio/Sounds/Bullets/GasterBlaster.wav"), 1.4)
 	
 	for n in 20:
 		var Sine = floor(sin(deg2rad(n / 3.0 * 180.0 / PI)) * 28)

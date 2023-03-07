@@ -103,7 +103,7 @@ func _process(delta: float) -> void:
 			elif $Sprite.frame == 5: $Sprite.frame = 4
 		
 		if btimer == 0:
-			audio.play(4, preload("res://Audio/Sounds/Bullets/GasterBlast.wav"), 1.2)
+			audio.playsfx(4, preload("res://Audio/Sounds/Bullets/GasterBlast.wav"), 1.2)
 			
 			if camera.has_method("shake"): if $Sprite.scale.y >= 2: camera.shake(5)
 		

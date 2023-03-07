@@ -68,4 +68,4 @@ func blitNormal(): # Default blitting type
 	if (charCount < len(text) - 1):
 		match text[charCount]:
 			" ", "?", ".", "!", ",": return
-			_: audio.play(1,textSound)
+			_: audio.playsfx(1,textSound)

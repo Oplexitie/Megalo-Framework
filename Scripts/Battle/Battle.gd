@@ -44,16 +44,15 @@ func _ready() -> void:
 	#$Attacks.attack = 0
 	#$Enemy/Dialogue.runDialogue($Attacks.attack)
 	#$Attacks.runAttack()
-	#audio.play("Music/AmbientBirds", 1.0, 1.0, true)
+	#audio.playmusic(load("res://Audio/Music/mus_birdnoise.ogg"))
 	
-	audio.play(0, load("res://Audio/Music/mus_zz_megalovania.ogg"),true)
+	audio.playmusic(load("res://Audio/Music/mus_zz_megalovania.ogg"))
 
-# warning-ignore:unused_parameter
 func _process(delta: float) -> void:
 	if (global.hp) <= 0:
-		audio.stopall()
+		audio.bus_muting(3,true)
+		audio.stop(0)
+		gameviewport.changeborder(10,1)
 		global.deathHeartPos = $HeartLayer/PlayerHeart.position
 		global.deathHeratCol = $HeartLayer/PlayerHeart/Sprite.modulate
-		
-		gameviewport.changeborder(10,1)
 		gameviewport.loadScene(1)

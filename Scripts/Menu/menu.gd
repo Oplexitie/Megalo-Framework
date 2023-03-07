@@ -69,6 +69,7 @@ func _ready():
 	text_color[1] = "[color=#646464]"
 	text_color[2] = "[color=#646464]"
 	update_text()
+	Engine.target_fps = 60
 	AudioServer.set_bus_volume_db(0,opt_config[2]/2.5-40)
 
 func _physics_process(delta):
@@ -82,15 +83,19 @@ func _physics_process(delta):
 					-1: opt_config[0] = 3
 					0: 
 						resolution_change(Vector2(640,480),false,false)
+						gameviewport.borderswitch(false)
 						text_resol[0] = "<      Windowed       >"
 					1: 
 						resolution_change(Vector2(1280,960),false,false)
+						gameviewport.borderswitch(false)
 						text_resol[0] = "<     Windowed x2     >"
 					2: 
 						resolution_change(Vector2(640,480),true,false)
+						gameviewport.borderswitch(false)
 						text_resol[0] = "<     Fullscreen      >"
 					3: 
 						resolution_change(Vector2(1920,1080),true,true)
+						gameviewport.borderswitch(true)
 						text_resol[0] = "< Fullscreen + Border >"
 					4: opt_config[0] = 0
 					_: opt_config[0] = 0
@@ -160,7 +165,7 @@ func _physics_process(delta):
 			_: opt_select = 0
 
 
-func resolution_change(resolution, isfull, hasborder):
+func resolution_change(resolution: Vector2, isfull: bool, hasborder: bool):
 	#switches to stretch for a bit so it can include the fullscreen border
 	get_tree().set_screen_stretch(SceneTree.STRETCH_MODE_VIEWPORT, SceneTree.STRETCH_ASPECT_EXPAND,Vector2(resolution[0],resolution[1]),1)
 	viewconta.rect_scale = Vector2(1 + int(hasborder), 1 + int(hasborder))

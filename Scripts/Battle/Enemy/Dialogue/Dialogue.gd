@@ -63,7 +63,6 @@ func runDialogue(Num):
 					3:
 						$"../Sans/Head".animation = "NoEyes"
 						$"../Sans/Torso".animation = "Default"
-						audio.stop("Music/AmbientBirds")
 				1: match n:
 					0:
 						$"../Sans/Head".animation = "Tired"

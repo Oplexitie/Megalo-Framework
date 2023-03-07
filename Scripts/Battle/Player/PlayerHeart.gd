@@ -114,7 +114,7 @@ func takeDamage(HP, KR = 0):
 			elif HP > 0:
 				emit_signal("camShake", 5)
 				invCount = global.inv
-			audio.play(3, preload("res://Audio/Sounds/Player/Hurt.wav"))
+			audio.playsfx(3, preload("res://Audio/Sounds/Player/Hurt.wav"))
 
 
 func slam(direction = 1):
@@ -179,7 +179,7 @@ func heartModeBlue(delta, speed, moveInput):
 			if abs(slamFall.x) >= 330.0: emit_signal("camShake", floor(abs(slamFall.x / 30.0 / 3.0)))
 			if abs(slamFall.y) >= 330.0: emit_signal("camShake", floor(abs(slamFall.y / 30.0 / 3.0)))
 			takeDamage(int(slamDamage))
-			audio.play(6, preload("res://Audio/Sounds/Impact.wav"))
+			audio.playsfx(6, preload("res://Audio/Sounds/Impact.wav"))
 			slamDisable()
 	else:
 		match heartAngle:
