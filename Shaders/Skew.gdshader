@@ -1,7 +1,4 @@
-[gd_resource type="Shader" format=2]
-
-[resource]
-code = "shader_type canvas_item;
+shader_type canvas_item;
 
 uniform vec2 f_1;
 uniform vec2 f_2;
@@ -22,4 +19,4 @@ vec2 sample_point(vec2 point) {
 
 void vertex() {
     VERTEX += sample_point(UV);
-}"
+}
